@@ -3,7 +3,8 @@ set -g -x fish_greeting ''
 # start tmux
 if status is-interactive
 and not set -q TMUX
-    tmux has-session -t LOCAL; and tmux attach-session -t LOCAL; or tmux new-session -s LOCAL; and kill %self
+    set tmux_name (string upper (hostname))
+    tmux has-session -t $tmux_name; and tmux attach-session -t $tmux_name; or tmux new-session -s $tmux_name; and kill %self
 end
 
 # GPG
