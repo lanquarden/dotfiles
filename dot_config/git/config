@@ -1,0 +1,12 @@
+[core]
+    editor = vim
+    pager = delta
+[include]
+    path = ~/.config/delta/themes.gitconfig
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    features = hoopoe
+    line-numbers = true
+[pull]
+    rebase = true

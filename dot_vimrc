@@ -1,0 +1,105 @@
+"Vundle entries
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'itchyny/lightline.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'Tagbar'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+"Easy on the eye colorscheme
+"colorscheme desert
+
+"Relative row numbers
+set relativenumber
+
+"Needed for vimwiki
+set nocompatible 
+filetype plugin on 
+syntax on
+
+"Change default font size
+"set guifont=Monospace\ 9
+
+"Highlight searches
+set hlsearch
+
+"Tabs and indents
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set list
+set listchars=tab:>-
+
+"lightline configuration
+set noshowmode
+set laststatus=2
+
+"Solarized color scheme
+"syntax enable
+set background=light
+"let g:solarized_termcolors= 16
+"let g:solarized_bold= 0
+colorscheme solarized
+
+"Lightline color schemas
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
+if !has('gui_running')
+    set t_Co=256
+endif
+
+"Keep 3 lines below and above
+set scrolloff=3
+
+"Highlight were column ends
+let &colorcolumn=join(range(120,999),",")
+let g:syntastic_python_flake8_args = "--max-line-length=120"
+
+"Do not wrap lines
+:set nowrap
+
+"Jedi conflict with pymode
+let g:pymode_rope = 0
+
+"Speed up Jedi
+let g:jedi#show_function_definition = 0
+let g:jedi#popup_on_dot = 0
+
+"Speed up scrolling for too long lines
+:set synmaxcol=200
+
+"change indentation for yaml
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
