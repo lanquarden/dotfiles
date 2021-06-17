@@ -6,6 +6,10 @@ set -U fish_greeting ""
 # bat
 abbr -a cat bat
 
+# vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
+
 # vi mode
 function fish_user_key_bindings
     #fish_default_key_bindings
