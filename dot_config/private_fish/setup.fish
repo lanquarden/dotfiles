@@ -10,6 +10,9 @@ abbr -a cat bat
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
+# tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # vi mode
 function fish_user_key_bindings
     #fish_default_key_bindings
