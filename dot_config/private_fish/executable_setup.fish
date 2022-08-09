@@ -26,3 +26,7 @@ function fish_user_key_bindings
 end
 funcsave fish_user_key_bindings
 
+
+# oh my fish
+curl -L https://get.oh-my.fish | fish
+omf install
