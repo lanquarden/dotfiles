@@ -13,3 +13,10 @@ set -gx GPG_TTY (tty)
 # personalize pure theme
 _pure_set_default pure_symbol_prompt '❯'
 _pure_set_default pure_symbol_reverse_prompt '❮'
+
+{{- if .work }}
+# start WSl services
+if status is-interactive
+    sudo /usr/bin/start_wsl_services.sh
+end
+{{- end }}
